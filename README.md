@@ -7,23 +7,39 @@ This project was inspired by a recent conversation with my best friend. During o
 
 ____________________________________________________________
 USER STORIES
+--USER--
 As a user, I want to log in/log out.
+As a user, I want to create an account.
+As a user, I want to have a profile page with all my posts & short bio.
+As a user, I want to change my password.
+As a user, I want to know how to use the site.
+As a user, I want a landing page.
+As a user, I want to see a navigation menu for easy movement on the app.
+As a user, I want to see a clean design that is an ally to the eyes (no bright colors).
+As a user, I want a responsive design that will function on phone and laptop screens.
+--PROFILE-- 
+As a user, I want to upload a profile picture.
+--BLOG-- 
 As a user, I want to write a blog post.
 As a user, I want to edit a blog post.
 As a user, I want to delete a blog post.
 As a user, I want to view a blog post.
 As a user, I want to be able to add a photo to my blog post.
 As a user, I want to view others user's blog posts.
-As a user, I want to to comment on other users' blog posts.
-As a user, I want to reply to other users' comments.
-As a user, I want to have a profile page with all my posts, a short bio and a profile picture.
-As a user, I want to know how to use the site.
-As a user, I want a landing page.
-As a user, I want to see a navigation menu for easy movement on the app.
-As a user, I want to see a clean design that is an ally to the eyes (no bright colors).
-As a user, I want a responsive design that will function on phone and laptop screens.
+As a user, I want to search using keywords for blog posts that would interest me.
+As a user, I want to know when a blog post was published/created.
+As a user, I want to know what what level I'm on in a certain hobby. This will be measured by the number of posts made. E.g. 1-5 posts will put the user at Level: Apprentice, 5-15 posts will mark the user as Level: 
+--TO-DO-- 
 As a user, I want a to-do list that is its own page.
-
+As a user, I want to create, view, update, and delete my to-dos.
+As a user, I want to mark a to-do as complete.
+As a user, I want to assign a duration to each to-do item.
+--COMMENTS-- ICEBOX
+As a user, I want to reply to other users' comments.
+As a user, I want to comment on others' blog posts.
+As a user, I want to be able to delete my own comments.
+As a user, I want to be able to edit my own comments.
+As a user, I want to see when a certain comment was created.
 
 ____________________________________________________________
 ERDs
