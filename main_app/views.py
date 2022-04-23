@@ -6,6 +6,8 @@ from .models import Post
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic import DetailView
 from django.urls import reverse
+from django.http import HttpResponseRedirect
+from django.contrib.auth.models import User
 
 # Create your views here.
 
@@ -33,11 +35,16 @@ class Blog_Post_List(TemplateView):
 
 class Post_Create(CreateView):
     model = Post
-    fields = ['post_title', 'post', 'img']
-    template_name = 'post_create.html'
-    
-    def get_success_url(self):
-        return reverse('post_detail', kwargs={'pk': self.object.pk})
+    fields = '__all__'
+    success_url = '/posts'
+
+    def form_valid(self, form):
+        self.object = form.save(commit=False)
+        self.object.user = self.request.user
+        self.object.save()
+        return HttpResponseRedirect('/posts')
+    # def get_success_url(self):
+    #     return reverse('post_detail', kwargs={'pk': self.object.pk})
 
 class Post_Detail(DetailView):
     model = Post
@@ -55,3 +62,8 @@ class Post_Delete(DeleteView):
     model = Post
     template_name = 'post_delete.html'
     success_url='/posts/'
+
+def profile(request, username):
+    user = User.objects.get(username=username)
+    posts = Post.objects.filter(user=user)
+    return render(request, 'profile.html', {'username': username, 'posts': posts})
