@@ -3,8 +3,9 @@ from django.views import View
 from django.http import HttpResponse
 from django.views.generic.base import TemplateView
 from .models import Post
-from django.views.generic.edit import CreateView
+from django.views.generic.edit import CreateView, UpdateView
 from django.views.generic import DetailView
+from django.urls import reverse
 
 # Create your views here.
 
@@ -34,8 +35,18 @@ class Post_Create(CreateView):
     model = Post
     fields = ['post_title', 'post', 'img']
     template_name = 'post_create.html'
-    success_url = '/posts/'
+    
+    def get_success_url(self):
+        return reverse('post_detail', kwargs={'pk': self.object.pk})
 
 class Post_Detail(DetailView):
     model = Post
     template_name = 'post_detail.html'
+
+class Post_Update(UpdateView):
+    model = Post
+    fields = ['post_title', 'post', 'img']
+    template_name = 'post_update.html'
+    
+    def get_success_url(self):
+        return reverse('post_detail', kwargs={'pk': self.object.pk})
