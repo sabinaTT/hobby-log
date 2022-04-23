@@ -15,3 +15,10 @@ class Post(models.Model):
     class Meta:
         ordering = ['post_title']
 
+# HOBBY_CHOICES
+
+# class Hobby(models.Model):
+#     name = models.CharField(max_length=50)
+#     HOBBY_CATEGORY_CHOICES = [
+        
+#     ]
