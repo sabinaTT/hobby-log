@@ -1,8 +1,10 @@
 <!-- this is the page that will hold all of teh boilerplate markup that belongs on every page asuch as the head, nav, footer -->
-
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel='stylesheet' href="{% static 'styles/styles.css' %}" /> 
+    <script src="{% static 'scripts/app.js' %}" defer></script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
