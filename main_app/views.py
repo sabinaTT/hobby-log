@@ -3,7 +3,7 @@ from django.views import View
 from django.http import HttpResponse
 from django.views.generic.base import TemplateView
 from .models import Post
-from django.views.generic.edit import CreateView, UpdateView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic import DetailView
 from django.urls import reverse
 
@@ -50,3 +50,8 @@ class Post_Update(UpdateView):
     
     def get_success_url(self):
         return reverse('post_detail', kwargs={'pk': self.object.pk})
+
+class Post_Delete(DeleteView):
+    model = Post
+    template_name = 'post_delete.html'
+    success_url='/posts/'
