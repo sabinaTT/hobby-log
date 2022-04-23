@@ -4,6 +4,7 @@ from django.http import HttpResponse
 from django.views.generic.base import TemplateView
 from .models import Post
 from django.views.generic.edit import CreateView
+from django.views.generic import DetailView
 
 # Create your views here.
 
@@ -34,3 +35,7 @@ class Post_Create(CreateView):
     fields = ['post_title', 'post', 'img']
     template_name = 'post_create.html'
     success_url = '/posts/'
+
+class Post_Detail(DetailView):
+    model = Post
+    template_name = 'post_detail.html'
