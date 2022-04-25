@@ -15,10 +15,26 @@ class Post(models.Model):
     class Meta:
         ordering = ['post_title']
 
-# HOBBY_CHOICES
+HOBBY_CATEGORY_CHOICES = [
+    ('Arts & Crafts', 'Arts & Crafts'),
+    ('Collecting', 'Collecting'),
+    ('Foodie', 'Foodie'),
+    ('Games', 'Games'),
+    ('Lucrative', 'Lucrative'),
+    ('Music', 'Music'),
+    ('Outdoors', 'Outdoors'),
+    ('Performing Arts', 'Performing Arts'),
+    ('Pets', 'Pets'),
+    ('Sports', 'Sports'),
+    ('Spiritual & Mental', 'Spiritual & Mental'),
+    ('Travel', 'Travel'),
+]
 
-# class Hobby(models.Model):
-#     name = models.CharField(max_length=50)
-#     HOBBY_CATEGORY_CHOICES = [
-        
-#     ]
+class Hobby(models.Model):
+    name = models.CharField(max_length=50)
+    category = models.CharField(max_length=25, choices = HOBBY_CATEGORY_CHOICES)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.name
+
