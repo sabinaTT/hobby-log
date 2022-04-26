@@ -10,5 +10,7 @@ urlpatterns = [
     path('posts/<int:pk>/update', views.Post_Update.as_view(), name='post_update'),
     path('posts/<int:pk>/delete', views.Post_Delete.as_view(), name='post_delete'),
     path('user/<username>', views.profile, name='profile'),
-     
+    path('login/', views.login_view, name='login'),
+    path('logout/', views.logout_view, name='logout'),
+    path('signup/', views.signup_view, name='signup'),
 ]

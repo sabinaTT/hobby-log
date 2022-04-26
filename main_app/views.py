@@ -8,6 +8,8 @@ from django.views.generic import DetailView
 from django.urls import reverse
 from django.http import HttpResponseRedirect
 from django.contrib.auth.models import User
+from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 
 # Create your views here.
 
@@ -67,3 +69,4 @@ def profile(request, username):
     user = User.objects.get(username=username)
     posts = Post.objects.filter(user=user)
     return render(request, 'profile.html', {'username': username, 'posts': posts})
+
