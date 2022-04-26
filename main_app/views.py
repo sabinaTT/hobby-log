@@ -85,7 +85,7 @@ def signup_view(request):
         return render(request, 'signup.html', {'form': form})
 
 def logout_view(request):
-    logout(request()
+    logout(request)
     return HttpsResponseRedirect('/posts')
 
 def login_view(request):
