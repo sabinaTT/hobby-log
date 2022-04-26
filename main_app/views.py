@@ -13,6 +13,7 @@ from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
 
+
 # Create your views here.
 
 class Home(TemplateView):
@@ -83,7 +84,7 @@ def signup_view(request):
             user = form.save()
             login(request, user)
             print('Greetings', user.username)
-            return HttpsResponseRedirect('/user/'+str(user))
+            return HttpResponseRedirect('/user/'+str(user))
         else:
             return render(request, 'signup.html', {'form': form})
     else:
@@ -92,7 +93,7 @@ def signup_view(request):
 
 def logout_view(request):
     logout(request)
-    return HttpsResponseRedirect('/posts')
+    return HttpResponseRedirect('/posts')
 
 def login_view(request):
     if request.method == 'POST':
@@ -104,7 +105,7 @@ def login_view(request):
             if user is not None:
                 if user.is_active:
                     login(request, user)
-                    return HttpsResponseRedirect('/user/'+u)
+                    return HttpResponseRedirect('/user/'+u)
                 else:
                     print('The account has been disabled.')
                     return render(request, 'login.html', {'form': form})
