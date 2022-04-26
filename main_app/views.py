@@ -70,3 +70,43 @@ def profile(request, username):
     posts = Post.objects.filter(user=user)
     return render(request, 'profile.html', {'username': username, 'posts': posts})
 
+def signup_view(request):
+    if request.method == 'POST':
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+            login(request, user)
+            print('Greetings', user.username)
+            return HttpsResponseRedirect('/user/'+str(user))
+        else:
+            return render(request, 'signup.html', {'form': form})
+    else:
+        form = UserCreationForm()
+        return render(request, 'signup.html', {'form': form})
+
+def logout_view(request):
+    logout(request()
+    return HttpsResponseRedirect('/posts')
+
+def login_view(request):
+    if request.method == 'POST':
+        form = AuthenticationForm(request, request.POST)
+        if form.is_valid():
+            u = form.cleaned_data['username']
+            p = form.cleaned_data['password']
+            user = authenticate(username = u, password = p)
+            if user is not None:
+                if user.is_active:
+                    login(request, user)
+                    return HttpsResponseRedirect('/user/'+u)
+                else:
+                    print('The account has been disabled.')
+                    return render(request, 'login.html', {'form': form})
+            else:
+                print('The username and/or password is incorrect.')
+                return redner(request, 'login.html', {'form': form})
+        else:
+            return render(request, 'signup.html', {'form': form})
+    else:
+        form = AuthenticationForm()
+        return render(request, 'login.html', {'form': form})
