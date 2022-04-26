@@ -40,8 +40,6 @@ class Hobby(models.Model):
         return self.name
 
 class Profile(models.Model):
-    
-
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     first_name = models.CharField(max_length=50, null=False)
     # user_posts = User.objects.all().annotate(post = Count('post'))
