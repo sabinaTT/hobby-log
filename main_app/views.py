@@ -10,6 +10,8 @@ from django.http import HttpResponseRedirect
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
+from django.contrib.auth.decorators import login_required
+from django.utils.decorators import method_decorator
 
 # Create your views here.
 
@@ -35,6 +37,7 @@ class Blog_Post_List(TemplateView):
             context['posts'] = Post.objects.all()
         return context
 
+@method_decorator(login_required, name='dispatch')
 class Post_Create(CreateView):
     model = Post
     fields = '__all__'
@@ -52,6 +55,7 @@ class Post_Detail(DetailView):
     model = Post
     template_name = 'post_detail.html'
 
+@method_decorator(login_required, name='dispatch')
 class Post_Update(UpdateView):
     model = Post
     fields = ['post_title', 'post', 'img']
@@ -60,11 +64,13 @@ class Post_Update(UpdateView):
     def get_success_url(self):
         return reverse('post_detail', kwargs={'pk': self.object.pk})
 
+@method_decorator(login_required, name='dispatch')
 class Post_Delete(DeleteView):
     model = Post
     template_name = 'post_delete.html'
     success_url='/posts/'
 
+@login_required
 def profile(request, username):
     user = User.objects.get(username=username)
     posts = Post.objects.filter(user=user)
