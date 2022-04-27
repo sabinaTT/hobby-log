@@ -1,7 +1,11 @@
 {% extends 'base.html' %}
 {% block content %}
-<h1>the <span>HobbyLog</span> app</h1>
-<h6>life isn’t boring, it’s just time for a new hobby</h6>
+<div>
+    <h1>the <span>HobbyLog</span> app</h1>
+</div>
+<div>
+    <h6>life isn’t boring, it’s just time for a new hobby</h6>
+</div>
 <div>
     <form method='POST' action='.' class='box'>
         {% csrf_token %}
@@ -9,7 +13,8 @@
         <input type='submit' value='LOGIN' class="log_sign_button"/>
         <p id='or'>OR</p>
         <input type='submit' value='SIGN UP' class="log_sign_button"/>
-
     </form>
 </div>
+<h3 id='about'><a href='/about/'>ABOUT</a></h3>
+
 {% endblock %}
