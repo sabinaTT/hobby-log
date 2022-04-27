@@ -247,10 +247,10 @@ label {
 }
 
 /* NAV BAR */
-nav {
-    margin: 0 auto;
+#home-nav {
     font-size: 20px;
     font-family: 'Tajawal', sans-serif;
+    margin-left: 35%;
 }
 #post-image {
     width: 600px;

@@ -1,6 +1,24 @@
 {% extends 'base.html' %}
 {% block content %}
-
+<div id='home-nav'>
+    <nav>
+        {% if user.is_authenticated %}
+        <a href='/user/{{user.last_name}}'>Greetings, {{user.username}}!</a> || 
+        <a href='/accounts/logout'>Logout</a> || 
+        <a href='/'>Home</a> || 
+        <a href='/about'>About</a> || 
+        <a href='/profile'>Profile</a> || 
+        <a href='/posts'>Posts</a> || 
+        {% else %}
+        <div id='about-buttons'>
+            <button type='submit'  class="log_sign_button"><a href='/login'>LOGIN</a></button>
+            <button type='submit'  class="log_sign_button"><a href='/accounts/signup/'>SIGN UP</a></button>
+        </div>
+        <!-- <a href='{% url "signup" %}'>Sign Up</a>
+        <a href='{% url "login" %}'>Login</a> -->
+        {% endif %}
+    </nav>
+    </div>
     <h1 id='about-title'>About</h1>
     <div class='about-box'>
         <br />
@@ -12,22 +30,6 @@
             And if you don't know where to start, don't worry. This is the beginning of your journey and all you need right now is the decision to start. The rest will come, promise!
         </p>
     </div>
-    <nav>
-        {% if user.is_authenticated %}
-        <a href='/user/{{user.last_name}}'>Greetings, {{user.username}}!</a>
-        <a href='/accounts/logout'>Logout</a>
-        <a href='/'>Home</a>
-        <a href='/about'>About</a>
-        <a href='/profile'>Profile</a>
-        <a href='/posts'>Posts</a>
-        {% else %}
-        <div id='about-buttons'>
-            <button type='submit'  class="log_sign_button"><a href='/login'>LOGIN</a></button>
-            <button type='submit'  class="log_sign_button"><a href='/accounts/signup/'>SIGN UP</a></button>
-        </div>
-        <!-- <a href='{% url "signup" %}'>Sign Up</a>
-        <a href='{% url "login" %}'>Login</a> -->
-        {% endif %}
-    </nav>
+
 
 {% endblock %}
