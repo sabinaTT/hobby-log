@@ -2,11 +2,13 @@
 {% block content %}
 <h1>the <span>HobbyLog</span> app</h1>
 <h6>life isn’t boring, it’s just time for a new hobby</h6>
-<div class="login_box">
-    <form method='POST' action='.'>
+<div>
+    <form method='POST' action='.' class='box'>
         {% csrf_token %}
         {{ form.as_p }}
-        <input type='submit' value='LOGIN' id="login-box"/>
+        <input type='submit' value='LOGIN' class="log_sign_button"/>
+        <p id='or'>OR</p>
+        <input type='submit' value='SIGN UP' class="log_sign_button"/>
 
     </form>
 </div>

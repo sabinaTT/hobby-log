@@ -1,14 +1,40 @@
 h1 {
     color: turquoise;
 }
- /* body {
-     background-color: EFEFF0;
- } */
+ body {
+     background-color: #E5E5E5;
+ }
 
  .login_box {
-     background-color: 6B5E62;
+     background-color: #6B5E62;
  }
 
- .login-box {
-     background-color: EAFFFD
+ .box {
+     background-color: #6B5E62;
+     width: 200px;
+     height: 300px;
+     border-radius: 10px;
+     margin: 0 auto;
+     padding: 50px;
+     color: white;
+     text-transform: uppercase;
+     font-family: 'Acme', sans-serif;
  }
+ input {
+     background-color: #EAFFFD;
+     width: 190px;
+     height: 30px;
+     display: block;
+     border-radius: 5px;
+ }
+.log_sign_button {
+    background-color: #D5CAD6;
+    width: 190px;
+    height: 35px;
+    margin: 0 auto;
+    font-size: 20px;
+    font-family: 'Acme', sans-serif;
+}
+#or {
+    text-align: center;
+}
