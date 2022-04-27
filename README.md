@@ -43,7 +43,7 @@ As a user, I want to see when a certain comment was created.
   
 ____________________________________________________________  
 ERDs  
-<img width="783" alt="Screen Shot 2022-04-27 at 3 41 00 PM" src="https://user-images.githubusercontent.com/93886062/165644699-6c7cca50-fd81-4046-bb69-4b22d024fada.png">
+<img width="903" alt="Screen Shot 2022-04-27 at 3 41 00 PM" src="https://user-images.githubusercontent.com/93886062/165644699-6c7cca50-fd81-4046-bb69-4b22d024fada.png">
 
 
 
