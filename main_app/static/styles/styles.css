@@ -1,3 +1,7 @@
+* {
+    font-family: 'Acme', sans-serif;
+}
+
 /* LOGIN PAGE */
  body {
      background-color: #E5E5E5;
@@ -192,6 +196,7 @@ label {
     background-color: #EAFFFD;
     width: 800px;
     margin: 0 auto;
+    /* margin-top: -20px; */
     padding: 10px;
     border-radius: 5px;
     font-family: 'Acme', sans-serif;
@@ -203,13 +208,40 @@ label {
 }
 #post_search {
     border-radius: 5px;
-    width: 300px;
+    width: 350px;
+    height: 40px;
     border: none;
     color: black;
+    display: inline-block;
 }
 #post_search_button {
-    background-color: #D5CAD6;
+    background-color: #E5E5E5;
     border: none;
     font-family: 'Acme', sans-serif;
     font-size: 20px;
+    display: inline-block;
+    width: 100px;
+    height: 40px;
+    /* margin-left: 10px; */
+}
+#post_clear_search_button {
+    background-color: #E5E5E5;
+    border: none;
+    font-family: 'Acme', sans-serif;
+    font-size: 20px;
+    border-radius: 5px;
+    width: 350px;
+    border: none;
+    color: black;
+}
+.post_input_search {
+    margin: 50px 50px 50px 22% ;
+}
+#create_post {
+    font-size: 80px;
+    font-family: 'Tajawal', sans-serif;
+    margin-left: 76%;
+}
+#post {
+    margin-bottom: 10px;
 }
