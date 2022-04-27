@@ -125,3 +125,64 @@ a:active {
     margin-right: 33%;
     width: 33%;
 }
+
+/* SIGNUP PAGE */
+.signup-title {
+    text-align: center;
+    font-family: 'Acme', sans-serif;
+    font-size: 40px;
+}
+#signup-form-button {
+    background-color: #D5CAD6;
+    width: 400px;
+    height: 35px;
+    margin: 0 auto;
+    font-size: 20px;
+    font-family: 'Acme', sans-serif;
+    display: block;
+    border-radius: 5px;
+    margin-top: 50px;
+}
+.signup-box {
+    background-color: #6B5E62;
+    width: 425px;
+    height: 475px;
+    border-radius: 10px;
+    margin: 0 auto;
+    border: 10px;
+    padding: 50px;
+    color: white;
+    text-transform: uppercase;
+    font-family: 'Acme', sans-serif;
+}
+li {
+    font-size: 15px;
+    text-transform: lowercase;
+}
+.helptext {
+    font-size: 15px;
+    text-transform: lowercase;
+    margin-left: 10px;
+}
+#id_username {
+    width: 400px;
+    margin: 0 auto;
+}
+#id_password1 {
+    width: 400px;
+    margin: 0 auto;
+}
+#id_password2 {
+    width: 400px;
+    margin: 0 auto;
+}
+label {
+    margin-left: 10px;
+}
+#signup-about {
+    color: black;
+    font-family: 'Acme', sans-serif;
+    font-size: 20px;
+    margin-top: 30px;
+    text-align: center;
+}
