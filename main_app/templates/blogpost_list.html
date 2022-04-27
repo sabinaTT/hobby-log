@@ -6,11 +6,9 @@
             <input type='submit' value="Search" id='post_search_button' />
 
         <a href='{% url "blogpost_list" %}' id='post_clear_search_button'>Clear Search</a>
-    </div>
-        <a href='{% url "post_create" %}' id='create_post'>+</a>
-
+        </div>
     </form>
-
+    <a href='{% url "post_create" %}' id='create_post'>+</a>
         {% for post in posts %}
         <div class='post_box'>
         <a href="{% url 'post_detail' post.pk %}">
@@ -25,5 +23,4 @@
         </div>
     </div>  
     {% endfor %}
-
 {% endblock %}

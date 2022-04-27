@@ -42,13 +42,14 @@ class Blog_Post_List(TemplateView):
 class Post_Create(CreateView):
     model = Post
     fields = '__all__'
-    success_url = '/posts'
+    template_name = 'post_create.html'
 
     def form_valid(self, form):
         self.object = form.save(commit=False)
         self.object.user = self.request.user
         self.object.save()
         return HttpResponseRedirect('/posts')
+
     # def get_success_url(self):
     #     return reverse('post_detail', kwargs={'pk': self.object.pk})
 
