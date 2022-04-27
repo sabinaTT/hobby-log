@@ -245,3 +245,14 @@ label {
 #post {
     margin-bottom: 10px;
 }
+
+/* NAV BAR */
+nav {
+    margin: 0 auto;
+    font-size: 20px;
+    font-family: 'Tajawal', sans-serif;
+}
+#post-image {
+    width: 600px;
+    height: 350px;
+}
