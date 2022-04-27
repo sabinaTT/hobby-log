@@ -1,11 +1,12 @@
 {% extends 'base.html' %}
 {% block content %}
 <div class='app-title'>
-    <h1>the <span>HobbyLog</span> app</h1>
+    <h1>the HobbyLog app</h1>
+    <div class='sub-heading'>
+        <h6>life isn’t boring, it’s just time for a new hobby</h6>
+    </div>
 </div>
-<div class='sub-heading'>
-    <h6>life isn’t boring, it’s just time for a new hobby</h6>
-</div>
+
 <div>
     <form method='POST' action='.' class='box'>
         {% csrf_token %}
