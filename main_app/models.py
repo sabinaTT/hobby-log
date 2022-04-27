@@ -7,11 +7,15 @@ class Post(models.Model):
     post_title = models.CharField(max_length=70)
     post = models.TextField(max_length=6000)
     created_at = models.DateTimeField(auto_now_add=True)
-    img = models.ImageField(null=True, blank=True)
+    img = models.ImageField(upload_to='media/images', null=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.post_title
+
+    def image_tag(self):
+        return mark_safe("<img src='{}' height='50'/>".format(self.img.url))
+    image_tag.short_description = 'Image'
     
     class Meta:
         ordering = ['post_title']
@@ -42,8 +46,8 @@ class Hobby(models.Model):
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     first_name = models.CharField(max_length=50, null=False)
-    # user_posts = User.objects.all().annotate(post = Count('post'))
     profile_img = models.ImageField(null=True, blank=True)
+    hobbies = models.ManyToManyField(Hobby)
 
     def __str__(self):
         return self.name
