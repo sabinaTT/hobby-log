@@ -43,9 +43,20 @@ As a user, I want to see when a certain comment was created.
   
 ____________________________________________________________  
 ERDs  
-<img width="733" alt="Screen Shot 2022-04-27 at 3 41 12 PM" src="https://user-images.githubusercontent.com/93886062/165644065-d8e7e118-3cbe-4802-93bd-fd25d57b51f6.png">
+<img width="783" alt="Screen Shot 2022-04-27 at 3 41 00 PM" src="https://user-images.githubusercontent.com/93886062/165644699-6c7cca50-fd81-4046-bb69-4b22d024fada.png">
+
+
 
 
   
 ____________________________________________________________  
 WIREFRAMES  
+<img width="733" alt="Screen Shot 2022-04-27 at 3 41 12 PM" src="https://user-images.githubusercontent.com/93886062/165644065-d8e7e118-3cbe-4802-93bd-fd25d57b51f6.png"><img width="707" alt="Screen Shot 2022-04-27 at 3 42 03 PM" src="https://user-images.githubusercontent.com/93886062/165644602-de6c65ab-f609-4d60-b537-a808069a670d.png">
+<img width="754" alt="Screen Shot 2022-04-27 at 3 41 29 PM" src="https://user-images.githubusercontent.com/93886062/165644583-4333cb83-ebf0-4cc3-99<img width="797" alt="Screen Shot 2022-04-27 at 3 41 42 PM" src="https://user-images.githubusercontent.com/93886062/165644595-b2f2c7e4-d0fb-4d3e-88da-d9042c291663.png">
+0c-65b0c4073593.png">
+<img width="753" alt="Screen Shot 2022-04-27 at 3 42 14 PM" src="https://user-images.githubusercontent.com/93886062/165644618-97346154-0ed1-44e3-<width="903" alt="Screen Shot 2022-04-27 at 3 42 45 PM" src="https://user-images.githubusercontent.com/93886062/165644657-658ed3fb-7e3f-4028-8a29-c3f832230fa8.png">
+<img width="903" alt="Screen Shot 2022-04-27 at 3 42 38 PM" src="https://user-images.githubusercontent.com/93886062/165644646-ea939eee-7519-4811-a3d4<img 
+-982b0abcde7c.png">
+<img width="901" alt="Screen Shot 2022-04-27 at 3 42 30 PM" src="https://user-images.githubusercontent.com/93886062/165644637-64c26326-e895-416b-9675-1d16dde63542.png">
+9822-225835938849.png"><img width="909" alt="Screen Shot 2022-04-27 at 3 42 22 PM" src="https://user-images.githubusercontent.com/93886062/165644627-4b20cd79-3a4e-447b-a897-0cdc232c50f0.png">
+
