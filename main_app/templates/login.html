@@ -1,9 +1,13 @@
 {% extends 'base.html' %}
 {% block content %}
-<h1>Login</h1>
-<form method='POST' action='.'>
-    {% csrf_token %}
-    {{ form.as_p }}
-    <input type='submit' value='Login' />
-</form>
+<h1>the <span>HobbyLog</span> app</h1>
+<h6>life isn’t boring, it’s just time for a new hobby</h6>
+<div class="login_box">
+    <form method='POST' action='.'>
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type='submit' value='LOGIN' id="login-box"/>
+
+    </form>
+</div>
 {% endblock %}
