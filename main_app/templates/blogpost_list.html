@@ -2,21 +2,24 @@
 {% block content %}
     <form>
         <div>
-            <input type='text' name='post' placeholder='type in a keyword' />
-            <input type='submit' value="Search" />
+            <input type='text' name='post' placeholder='type in a keyword' id='post_search' />
+            <input type='submit' value="Search" id='post_search_button' />
         </div>
         <a href='{% url "blogpost_list" %}'>Clear Search</a>
         <a href='{% url "post_create" %}'>Create Post</a>
     </form>
-    <h1>All Blog Posts</h1>
-    {% for post in posts %}
-    <a href="{% url 'post_detail' post.pk %}">
-        <h3>Title: {{ post.post_title }}</h3>
-    </a>
-    <p>Author: 
-        <a href='/user/{{post.user.username}}'>{{post.user.username}}
+    <h1 class='post_title'>All Posts</h1>
+    <div class='post_box'>
+        {% for post in posts %}
+        <a href="{% url 'post_detail' post.pk %}">
+            <h3>{{ post.post_title }}</h3>
         </a>
-    </p>
-    <p>Body: {{ post.post  }}</p>
+        <p>BY: 
+            <a href='/user/{{post.user.username}}'>{{post.user.username}}
+            </a>
+        </p>
+        <p>{{ post.post  }}</p>
+    </div>  
     {% endfor %}
+
 {% endblock %}
