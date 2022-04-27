@@ -1,5 +1,31 @@
 {% extends 'base.html' %}
 {% block content %}
-    <h1>Welcome to HobbyLog. This project is going to be a success, iA. You just keep working!</h1>
-    
+<div id='home-nav'>
+<nav>
+    {% if user.is_authenticated %}
+    <a href='/user/{{user.last_name}}'>Greetings, {{user.username}}!</a> || 
+    <a href='/accounts/logout'>Logout</a> || 
+    <a href='/'>Home</a> || 
+    <a href='/about'>About</a> || 
+    <a href='/profile'>Profile</a> || 
+    <a href='/posts'>Posts</a> || 
+    {% else %}
+    <!-- <div id='about-buttons'>
+        <button type='submit'  class="log_sign_button"><a href='/login'>LOGIN</a></button>
+        <button type='submit'  class="log_sign_button"><a href='/accounts/signup/'>SIGN UP</a></button>
+    </div> -->
+    <div id='logged_out_signup_login'>
+    <a href='{% url "signup" %}'>Sign Up</a> || 
+    <a href='{% url "login" %}'>Login</a> || 
+    </div>  
+    {% endif %}
+</nav>
+</div>
+<div class='app-title'>
+    <h1>the HobbyLog app</h1>
+    <div class='sub-heading'>
+        <h6>life isn’t boring, it’s just time for a new hobby</h6>
+    </div>
+</div>
+
 {% endblock %}

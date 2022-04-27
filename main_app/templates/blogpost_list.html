@@ -1,22 +1,47 @@
 {% extends 'base.html' %}
 {% block content %}
-    <form>
-        <div>
-            <input type='text' name='post' placeholder='type in a keyword' />
-            <input type='submit' value="Search" />
+<div id='home-nav'>
+    <nav>
+        {% if user.is_authenticated %}
+        <a href='/user/{{user.last_name}}'>Greetings, {{user.username}}!</a> || 
+        <a href='/accounts/logout'>Logout</a> || 
+        <a href='/'>Home</a> || 
+        <a href='/about'>About</a> || 
+        <a href='/profile'>Profile</a> || 
+        <a href='/posts'>Posts</a> || 
+        {% else %}
+        <!-- <div id='about-buttons'>
+            <button type='submit'  class="log_sign_button"><a href='/login'>LOGIN</a></button>
+            <button type='submit'  class="log_sign_button"><a href='/accounts/signup/'>SIGN UP</a></button>
+        </div> -->
+        <div id='logged_out_signup_login'>
+        <a href='{% url "signup" %}'>Sign Up</a> || 
+        <a href='{% url "login" %}'>Login</a>
         </div>
-        <a href='{% url "blogpost_list" %}'>Clear Search</a>
-        <a href='{% url "post_create" %}'>Create Post</a>
+        {% endif %}
+    </nav>
+    </div>
+    <form>
+        <div class='post_input_search'>
+            <input type='text' name='post' placeholder='type in a keyword' id='post_search' />
+            <input type='submit' value="Search" id='post_search_button' />
+
+        <a href='{% url "blogpost_list" %}' id='post_clear_search_button'>Clear Search</a>
+        </div>
     </form>
-    <h1>All Blog Posts</h1>
-    {% for post in posts %}
-    <a href="{% url 'post_detail' post.pk %}">
-        <h3>Title: {{ post.post_title }}</h3>
-    </a>
-    <p>Author: 
-        <a href='/user/{{post.user.username}}'>{{post.user.username}}
+    <a href='{% url "post_create" %}' id='create_post'>+</a>
+        {% for post in posts %}
+        <div class='post_box'>
+        <a href="{% url 'post_detail' post.pk %}">
+            <h3>{{ post.post_title }}</h3>
         </a>
-    </p>
-    <p>Body: {{ post.post  }}</p>
+        <p>BY: 
+            <a href='/user/{{post.user.username}}'>{{post.user.username}}
+            </a>
+        </p>
+        <div id='post'>
+        <p>{{ post.post}}</p>
+        </div>
+    </div>  
     {% endfor %}
 {% endblock %}
