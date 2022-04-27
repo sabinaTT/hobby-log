@@ -13,6 +13,7 @@ h1 {
      height: 300px;
      border-radius: 10px;
      margin: 0 auto;
+     border: 10px;
      padding: 50px;
      color: white;
      text-transform: uppercase;
@@ -55,4 +56,14 @@ a:active {
     font-size: 20px;
     margin-top: 70px;
     text-align: center;
+}
+.errorlist {
+    position: absolute;
+    top: 100px;
+    left: 350px;
+    color: black;
+    float: right;
+    opacity: 50%;
+
+
 }
