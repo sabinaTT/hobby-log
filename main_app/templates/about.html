@@ -10,12 +10,14 @@
         <a href='/profile'>Profile</a> || 
         <a href='/posts'>Posts</a> || 
         {% else %}
-        <div id='about-buttons'>
+        <!-- <div id='about-buttons'>
             <button type='submit'  class="log_sign_button"><a href='/login'>LOGIN</a></button>
             <button type='submit'  class="log_sign_button"><a href='/accounts/signup/'>SIGN UP</a></button>
-        </div>
-        <!-- <a href='{% url "signup" %}'>Sign Up</a>
-        <a href='{% url "login" %}'>Login</a> -->
+        </div> -->
+        <div id='logged_out_signup_login'>
+            <a href='{% url "signup" %}'>Sign Up</a> || 
+            <a href='{% url "login" %}'>Login</a> ||
+            </div>  
         {% endif %}
     </nav>
     </div>

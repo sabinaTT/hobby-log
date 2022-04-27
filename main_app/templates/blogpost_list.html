@@ -1,19 +1,26 @@
 {% extends 'base.html' %}
 {% block content %}
-<nav>
-    {% if user.is_authenticated %}
-    
-       <a href='/user/{{user.last_name}}'>Greetings, {{user.username}}!</a>
-        <a href='/accounts/logout'>Logout</a>
-        <a href='/'>Home</a></li>
-        <a href='/about'>About</a>
-        <a href='/posts'>Posts</a>
+<div id='home-nav'>
+    <nav>
+        {% if user.is_authenticated %}
+        <a href='/user/{{user.last_name}}'>Greetings, {{user.username}}!</a> || 
+        <a href='/accounts/logout'>Logout</a> || 
+        <a href='/'>Home</a> || 
+        <a href='/about'>About</a> || 
+        <a href='/profile'>Profile</a> || 
+        <a href='/posts'>Posts</a> || 
         {% else %}
-        <!-- <a href='{% url "signup" %}'>Sign Up</a>
-        <a href='{% url "login" %}'>Login</a> -->
+        <!-- <div id='about-buttons'>
+            <button type='submit'  class="log_sign_button"><a href='/login'>LOGIN</a></button>
+            <button type='submit'  class="log_sign_button"><a href='/accounts/signup/'>SIGN UP</a></button>
+        </div> -->
+        <div id='logged_out_signup_login'>
+        <a href='{% url "signup" %}'>Sign Up</a> || 
+        <a href='{% url "login" %}'>Login</a>
+        </div>
         {% endif %}
-    
-</nav>
+    </nav>
+    </div>
     <form>
         <div class='post_input_search'>
             <input type='text' name='post' placeholder='type in a keyword' id='post_search' />

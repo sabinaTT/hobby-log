@@ -37,6 +37,7 @@ class Blog_Post_List(TemplateView):
         else:
             context['posts'] = Post.objects.all()
         return context
+        
 
 @method_decorator(login_required, name='dispatch')
 class Post_Create(CreateView):
